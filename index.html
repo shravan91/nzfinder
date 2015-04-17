@@ -29,15 +29,15 @@
   <div id='instructions'></div>-->
 <script>
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2hyYXZhbjE5OTEiLCJhIjoiMTdBSHFPbyJ9.TOW1Gw15YndOtIHl3_oiKw';
-var map = L.mapbox.map('map', 'shravan1991.9bde9ec1')
-    .setView([-41.951, 178.198], 6).addControl(L.mapbox.geocoderControl('mapbox.places', {
+var map = L.mapbox.map('map', 'shravan1991.9bde9ec1', {'attributionControl': false})
+    .setView([-41.951, 178.198], 5).addControl(L.mapbox.geocoderControl('mapbox.places', {
         autocomplete: true}))
     /*.on('ready', function() { new L.Control.MiniMap(L.mapbox.tileLayer('shravan1991.cd791dbd'))
             .addTo(map);	
         });*/
     var hash = L.hash(map);
 //L.tileLayer('http://maps.metastudio.org/osm-india/{z}/{x}/{y}.png').addTo(map);
-    map.attributionControl.setPrefix('Mapbox')
+L.control.attribution({'position': 'bottomright', 'prefix': '<a href="https://mapbox.com">Mapbox</a>'}).addTo(map);
 
 // create the initial directions object, from which the layer
 // and inputs will pull data.
